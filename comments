@@ -1,0 +1,10 @@
+ROUGE installation
+git clone https://github.com/andersjo/pyrouge.git
+cd pyrouge
+python setup.py install
+install xdom (etc) from http://www.summarizerman.com/post/42675198985/figuring-out-rouge
+
+another source: https://github.com/pltrdy/rouge
+haven't tried: https://github.com/bheinzerling/pyrouge
+
+ROGUE and BLUE doesn't discard stopwords
