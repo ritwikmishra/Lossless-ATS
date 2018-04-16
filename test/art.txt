@@ -1,0 +1,839 @@
+# ::id 1
+# ::snt The outlook for the economy is worsening, international experts said yesterday.
+# ::tok The outlook for the economy is worsening , international experts said yesterday .
+(x11 / say-01
+	:ARG1 (x7 / worsen-01
+		:ARG0 (x2 / outlook
+			:poss (x5 / economy)))
+	:ARG0 (x10 / person
+		:ARG1-of (e / expert-41)
+		:mod (x9 / international))
+	:time (x12 / yesterday))
+
+# ::id 2
+# ::snt The Organisation for Economic Cooperation and Development expects output to shrink by 0.7 per cent this year  far worse than the 0.5 per cent growth it had predicted in May.
+# ::tok The Organisation for Economic Cooperation and Development expects output to shrink by 0.7 per cent this year far worse than the 0.5 per cent growth it had predicted in May .
+(x8 / expect-01
+	:ARG0 (x2 / government-organization
+		:name (n / name
+			:op1 "Organisation"
+			:op2 "for"
+			:op3 "Economic"
+			:op4 "Cooperation"
+			:op5 "and"
+			:op6 "Development"))
+	:ARG1 (x11 / shrink-01
+		:ARG1 (x9 / output)
+		:ARG4 0.7
+		:ARG3 (x15 / monetary-quantity
+			:unit (c / cent))
+		:time (x17 / year
+			:mod (x16 / this))
+		:ARG1 (x19 / worsen-01
+			:compared-to (x25 / grow-01
+				:quant 0.5
+				:ARG1 (x24 / monetary-quantity
+					:unit (c1 / cent))
+				:ARG1-of (x28 / predict-01
+					:time (x30 / date-entity))))))
+
+# ::id 3
+# ::snt Coalition ministers warned however that there was no 'quick fix' for the economy while ridiculing Labour's solution to add more debt.
+# ::tok Coalition ministers warned however that there was no ` quick fix ' for the economy while ridiculing Labour 's solution to add more debt .
+(x3 / warn-01
+	:ARG1 (x7 / be-02
+		:null_edge (x17 / ridicule-01
+			:ARG1 (x11 / fix-02
+				:polarity -
+				:mod (x10 / quick)
+				:ARG1 (x15 / economy))
+			:ARG1 (x20 / solution
+				:ARG0 (x18 / organization
+					:name (n / name
+						:op1 "Labour"))
+				:null_edge (x22 / add-04
+					:ARG1 (x24 / debt
+						:mod (x23 / more))))))
+	:ARG0 (xap0 / person
+		:ARG0-of (x2 / have-org-role-91
+			:ARG2 (m / minister)
+			:ARG1 (x1 / coalition))))
+
+# ::id 4
+# ::snt Hard times: The UK is unlikely to pull out of The UK double-dip recession this quarter, global economic think tank the OECD has warned, meaning more suffering for British businesses and consumer.
+# ::tok Hard times : The UK is unlikely to pull out of The UK double-dip recession this quarter , global economic think tank the OECD has warned , meaning more suffering for British businesses and consumer .
+(x7 / likely
+	:polarity -
+	:null_edge (x1 / hard)
+	:domain (x9 / pull-01
+		:ARG0 (x5 / country
+			:name (n / name
+				:op1 "UK"))
+		:ARG2 (x15 / recession
+			:location (x13 / country
+				:name (n1 / name
+					:op1 "UK"))
+			:mod (x14 / double-dip))
+		:ARG1 (x17 / quarter
+			:mod (x16 / this)))
+	:domain (x22 / tank
+		:mod (x19 / globe)
+		:mod (x20 / economy)
+		:mod (x21 / think)
+		:ARG0-of (x26 / warn-01
+			:ARG0 (x24 / organization
+				:name (n2 / name
+					:op1 "OECD"))
+			:ARG0-of (x28 / mean-01
+				:ARG1 (x30 / suffer-01
+					:degree (x29 / more)
+					:purpose (x34 / and
+						:op1 (x33 / business
+							:mod (x32 / country
+								:name (n3 / name
+									:op1 "Britain")))
+						:op2 (x35 / consume-01)))))))
+
+# ::id 5
+# ::snt The Paris-based OECD also cut The Paris-based OECD forecasts for other major developed countries including Germany, France and Italy.
+# ::tok The Paris-based OECD also cut The Paris-based OECD forecasts for other major developed countries including Germany , France and Italy .
+(x5 / cut-02
+	:ARG0 (x3 / organization
+		:name (n / name
+			:op1 "OECD")
+		:mod (x2 / organization
+			:name (n1 / name
+				:op1 "Paris-based")))
+	:mod (x4 / also)
+	:ARG1 (x9 / forecast-01
+		:ARG1 (x7 / organization
+			:name (n2 / name
+				:op1 "Paris-based"))
+		:ARG1 (x8 / organization
+			:name (n3 / name
+				:op1 "OECD"))
+		:ARG1 (x14 / country
+			:mod (x11 / other)
+			:mod (x12 / major)
+			:ARG1-of (x13 / develop-02)
+			:ARG2-of (x15 / include-91
+				:ARG1 (x19 / and
+					:op1 (x16 / country
+						:name (n4 / name
+							:op1 "Germany"))
+					:op2 (x18 / country
+						:name (n5 / name
+							:op1 "France"))
+					:op2 (x20 / country
+						:name (n6 / name
+							:op1 "Italy")))))))
+
+# ::id 6
+# ::snt But the UK downgrade was by far th.
+# ::tok But the UK downgrade was by far th .
+(x1 / contrast-01
+	:ARG2 (x4 / downgrade
+		:mod (x3 / country
+			:name (n / name
+				:op1 "UK")))
+	:ARG2 (x7 / far))
+
+# ::id 7
+# ::snt worst and came as a blow to Chancellor George Osborne's battle to dra.
+# ::tok worst and came as a blow to Chancellor George Osborne 's battle to dra .
+(x2 / and
+	:op1 (x1 / bad)
+	:time (x12 / battle-01
+		:name (x9 / name
+			:op1 "George"
+			:op2 "Osborne"
+			:ARG0-of (x8 / have-org-role-91
+				:ARG2 (c / chancellor)))
+		:ARG1 (x14 / dra)))
+
+# ::id 8
+# ::snt the economy out of recession and wipe out the deficit inherited fro.
+# ::tok the economy out of recession and wipe out the deficit inherited fro .
+(x6 / and
+	:op1 (x3 / out
+		:ARG0 (x2 / economy)
+		:topic (x5 / recession))
+	:op2 (x7 / wipe-02
+		:ARG0 x2
+		:ARG1 (x10 / deficit
+			:ARG1-of (x11 / inherit-01
+				:ARG1 (x12 / fro)))))
+
+# ::id 9
+# ::snt Labour.
+# ::tok Labour .
+(x1 / labour)
+
+# ::id 10
+# ::snt David Cameron said yesterday that i.
+# ::tok David Cameron said yesterday that i.
+(x3 / say-01
+	:ARG0 (x1 / newspaper
+		:name (n / name
+			:op1 "David"
+			:op2 "Cameron"))
+	:time (x4 / yesterday)
+	:ARG1 (x6 / i.))
+
+# ::id 11
+# ::snt was difficult to kickstart growth: 'If there was a button you could pus.
+# ::tok was difficult to kickstart growth : ` If there was a button you could pus .
+(x2 / difficult
+	:domain (x4 / kick-01
+		:ARG1 (x5 / grow-01)
+		:ARG0 (x12 / button
+			:ARG1-of (x15 / pus
+				:ARG0 (x13 / you)
+				:mod (x14 / possible)))))
+
+# ::id 12
+# ::snt in Whitehall which just said "right, growth comes" I would have pushe.
+# ::tok in Whitehall which just said `` right , growth comes '' I would have pushe .
+(x5 / say-01
+	:mod (x4 / just)
+	:ARG1 (x7 / right)
+	:ARG1 (x15 / pushe
+		:domain (x9 / grow-01)
+		:null_edge (x10 / come-01)
+		:domain (x12 / i)))
+
+# ::id 13
+# ::snt it long ago.
+# ::tok it long ago .
+(x1 / it)
+
+# ::id 14
+# ::snt What the Government can do is set th.
+# ::tok What the Government can do is set th .
+(x7 / set-03
+	:ARG1 (x4 / possible
+		:domain (x5 / do-02
+			:ARG0 (x3 / government-organization
+				:ARG0-of (g / govern-01))))
+	:ARG2 (x8 / th))
+
+# ::id 15
+# ::snt conditions for growth, provide that background of low interest rates.
+# ::tok conditions for growth , provide that background of low interest rates .
+(x5 / provide-01
+	:ARG0 (x1 / condition
+		:mod (x3 / grow-01))
+	:ARG1 (x7 / background
+		:mod (x6 / that)
+		:ARG2 (x11 / rate
+			:mod (x9 / low)
+			:mod (x10 / interest))))
+
+# ::id 16
+# ::snt low tax rates  which we've done in this country  a steady and sensibl.
+# ::tok low tax rates which we 've done in this country a steady and sensibl .
+(x3 / rate
+	:mod (x1 / low)
+	:mod (x2 / tax-01)
+	:ARG1 (x13 / and
+		:op1 (x5 / we)
+		:location (x10 / country
+			:mod (x9 / this))
+		:op1 (x12 / steady)
+		:op2 (x14 / sensibl)))
+
+# ::id 17
+# ::snt government, then government'll find that households will want to come forwar.
+# ::tok government , then government 'll find that households will want to come forwar .
+(x6 / find-02
+	:ARG0 (x1 / government-organization
+		:ARG0-of (g / govern-01))
+	:ARG0 (x4 / government-organization
+		:ARG0-of (g1 / govern-01)
+		:time (x3 / then))
+	:ARG1 (x10 / want-01
+		:ARG0 (x8 / household)
+		:ARG1 (x12 / come-04
+			:ARG0 x8
+			:ARG1 (x13 / forwar))))
+
+# ::id 18
+# ::snt and business will want to come forward and invest.
+# ::tok and business will want to come forward and invest .
+(x1 / and
+	:op2 (x4 / want-01
+		:ARG0 (x2 / business)
+		:ARG1 (x8 / and
+			:op1 (x6 / come-04
+				:direction (x7 / forward))
+			:op2 (x9 / invest-01))))
+
+# ::id 19
+# ::snt .
+# ::tok .
+(x / xconcept)
+
+# ::id 20
+# ::snt In the Commons, Liberal Democra.
+# ::tok In the Commons , Liberal Democra .
+(x3 / government-organization
+	:name (n / name
+		:op1 "Commons")
+	:ARG1 (x5 / liberal))
+
+# ::id 21
+# ::snt Business Secretary Vince Cable exploded with uncharacteristic anger a.
+# ::tok Business Secretary Vince Cable exploded with uncharacteristic anger a.
+(x5 / explode-01
+	:ARG0 (x3 / newspaper
+		:name (n / name
+			:op1 "Vince"
+			:op2 "Cable")
+		:null_edge (x1 / Business)
+		:ARG0-of (x2 / have-org-role-91
+			:ARG2 (s / secretary)))
+	:ARG1 (x8 / anger-01
+		:ARG1 x3
+		:mod (x7 / uncharacteristic)))
+
+# ::id 22
+# ::snt Labour challenged the Government's economic record.
+# ::tok Labour challenged the Government 's economic record .
+(x2 / challenge-01
+	:ARG0 (x1 / labour)
+	:ARG1 (x7 / record
+		:poss (x4 / government-organization
+			:ARG0-of (g / govern-01))
+		:mod (x6 / economy)))
+
+# ::id 23
+# ::snt Labour said Britain's problems stemme.
+# ::tok Labour said Britain 's problems stemme .
+(x2 / say-01
+	:ARG0 (x1 / organization
+		:name (n / name
+			:op1 "Labour"))
+	:ARG1 (x6 / stemme
+		:ARG0 (x5 / problem
+			:poss (x3 / country
+				:name (n1 / name
+					:op1 "Britain")))))
+
+# ::id 24
+# ::snt from a Labour boom that was allowed to go 'out of control', with 'broke.
+# ::tok from a Labour boom that was allowed to go ` out of control ' , with ` broke .
+(x4 / boom-02
+	:mod (x3 / labour)
+	:purpose (x9 / go-02
+		:ARG1-of (x7 / allow-01
+			:null_edge (x18 / break-01))
+		:ARG1 (xap0 / out-of
+			:op1 (x13 / control-01))))
+
+# ::id 25
+# ::snt banks, a very serious consumer debt problem and very major problems i.
+# ::tok banks , a very serious consumer debt problem and very major problems i.
+(x1 / bank
+	:domain (x9 / and
+		:op2 (x8 / problem
+			:mod (x5 / serious
+				:degree (x4 / very))
+			:mod (x6 / person
+				:ARG0-of (c / consume-01))
+			:mod (x7 / debt))
+		:op2 (x13 / i.
+			:mod (x11 / major
+				:degree (x10 / very))
+			:ARG1 (x12 / problem))))
+
+# ::id 26
+# ::snt our export market'.
+# ::tok our export market ' .
+(x3 / market
+	:mod (x2 / export-01
+		:poss (x1 / our)))
+
+# ::id 27
+# ::snt World in crisis: This table shows the OECD's predictions for annualised quarter-on-quarter growth in the G7 economie.
+# ::tok World in crisis : This table shows the OECD 's predictions for annualised quarter-on-quarter growth in the G7 economie .
+(x7 / show-01
+	:ARG1 (x3 / crisis)
+	:ARG0 (x6 / table
+		:mod (x5 / this))
+	:ARG1 (x11 / predict-01
+		:ARG0 (x9 / organization
+			:name (n / name
+				:op1 "OECD"))
+		:ARG1 (x15 / grow-01
+			:manner (x13 / annualised)
+			:manner (x14 / quarter-on-quarter)
+			:ARG1 (x19 / economie))))
+
+# ::id 28
+# ::snt In a speech in Scotland last night.
+# ::tok In a speech in Scotland last night .
+(x3 / speech
+	:location (x5 / country
+		:name (n / name
+			:op1 "Scotland"))
+	:time (x7 / night))
+
+# ::id 29
+# ::snt Mr Osborne admitted the economic outlook remained uncertain but insiste.
+# ::tok Mr Osborne admitted the economic outlook remained uncertain but insiste .
+(x3 / admit-01
+	:ARG0 (x2 / person
+		:name (n / name
+			:op1 "Osborne")
+		:null_edge (x1 / mr))
+	:ARG1 (x7 / remain-01
+		:ARG1 (x6 / outlook
+			:mod (x5 / economy))
+		:ARG3 (x8 / uncertain)
+		:ARG1 (x10 / insiste)))
+
+# ::id 30
+# ::snt there were some positive signs.
+# ::tok there were some positive signs .
+(x5 / sign-01
+	:mod (x3 / some)
+	:mod (x4 / positive))
+
+# ::id 31
+# ::snt He said: 'Our economy is healin.
+# ::tok He said : ` Our economy is healin .
+(x2 / say-01
+	:ARG0 (x1 / he)
+	:ARG1 (x8 / healin
+		:ARG0 (x6 / economy
+			:poss (x5 / our))))
+
+# ::id 32
+# ::snt jobs are being created, manufacturing and exports have grown as a shar.
+# ::tok jobs are being created , manufacturing and exports have grown as a shar .
+(x10 / grow-03
+	:ARG1 (x7 / and
+		:op1 (x4 / create-01
+			:ARG1 (x1 / job))
+		:op1 (x6 / manufacture-01)
+		:op2 (x8 / export-01))
+	:ARG2 (x13 / shar))
+
+# ::id 33
+# ::snt of our economy, our trade with the emerging world is soaring, inflatio.
+# ::tok of our economy , our trade with the emerging world is soaring , inflatio .
+(x12 / soar-01
+	:ARG1 (x3 / economy
+		:poss (x2 / our))
+	:ARG0 (x6 / trade-01
+		:poss (x5 / our)
+		:ARG2 (x10 / world
+			:ARG0-of (x9 / emerge-01)))
+	:manner (x14 / inflatio))
+
+# ::id 34
+# ::snt is down, much of the necessary deleveraging in our banking system ha.
+# ::tok is down , much of the necessary deleveraging in our banking system ha .
+(x8 / deleveraging
+	:quant (x4 / much
+		:direction (x2 / down))
+	:ARG1 (x12 / system
+		:mod (x11 / banking
+			:poss (x10 / our))
+		:ARG0-of (x13 / ha)))
+
+# ::id 35
+# ::snt been achieved, and the world is once again investing in Britain.
+# ::tok been achieved , and the world is once again investing in Britain .
+(x4 / and
+	:op1 (x2 / achieve-01)
+	:op2 (x10 / invest-01
+		:ARG0 (x6 / world)
+		:mod (x9 / again
+			:mod (x8 / once))
+		:ARG2 (x12 / country
+			:name (n / name
+				:op1 "Britain"))))
+
+# ::id 36
+# ::snt 'But the scale of the challenge is so great there are no quick fixes or easy routes to recovery.
+# ::tok ` But the scale of the challenge is so great there are no quick fixes or easy routes to recovery .
+(x2 / contrast-01
+	:ARG2 (x10 / great
+		:domain (x4 / scale
+			:poss (x7 / challenge-01))
+		:degree (x9 / so)
+		:domain (x16 / or
+			:op1 (x15 / fix-02
+				:polarity -
+				:mod (x14 / quick))
+			:op1 (x18 / route
+				:mod (x17 / easy)
+				:path-of (x20 / recover-01)))))
+
+# ::id 37
+# ::snt 'Nobody is offering a credible o.
+# ::tok ` Nobody is offering a credible o.
+(x4 / offer-01
+	:ARG0 (x2 / nobody)
+	:ARG1 (x7 / o.
+		:mod (x6 / credible)))
+
+# ::id 38
+# ::snt convincing alternative economic strategy.
+# ::tok convincing alternative economic strategy .
+(x4 / strategy
+	:mod (x1 / convince-01)
+	:mod (x2 / alternative)
+	:mod (x3 / economy))
+
+# ::id 39
+# ::snt There is no easy path t.
+# ::tok There is no easy path t.
+(x5 / path
+	:polarity -
+	:mod (x4 / easy)
+	:mod (x6 / t.))
+
+# ::id 40
+# ::snt recovery and prosperity.
+# ::tok recovery and prosperity .
+(x2 / and
+	:op1 (x1 / recover-01)
+	:op2 (x3 / prosper-01))
+
+# ::id 41
+# ::snt We in Britain have to confront our problem.
+# ::tok We in Britain have to confront our problem .
+(xap0 / obligate-01
+	:ARG1 (x1 / we)
+	:ARG1 (x3 / country
+		:name (n / name
+			:op1 "Britain"))
+	:ARG2 (x6 / confront-01
+		:ARG0 x1
+		:ARG1 (x8 / problem
+			:poss (x7 / our))))
+
+# ::id 42
+# ::snt head on, be honest about the scale of the challenge, and be consisten.
+# ::tok head on , be honest about the scale of the challenge , and be consisten .
+(x5 / honesty
+	:degree (x8 / scale
+		:poss (x11 / challenge-01
+			:ARG1 (x13 / and
+				:op2 (x15 / consisten)))))
+
+# ::id 43
+# ::snt in our determination to succeed.
+# ::tok in our determination to succeed .
+(x3 / determination
+	:poss (x2 / our)
+	:ARG1 (x5 / succeed-01))
+
+# ::id 44
+# ::snt .
+# ::tok .
+(x / xconcept)
+
+# ::id 45
+# ::snt Britain is in the worst double-dip recession for more than 50 years and the longest period of economic weakness for a century.
+# ::tok Britain is in the worst double-dip recession for more than 50 years and the longest period of economic weakness for a century .
+(x13 / and
+	:op1 (x7 / recession
+		:ARG1 (x1 / country
+			:name (n / name
+				:op1 "Britain"))
+		:mod (x5 / bad)
+		:mod (x6 / double-dip)
+		:duration (x12 / temporal-quantity
+			:unit (y / year)
+			:quant (x9 / more-than
+				:op1 50)))
+	:op2 (x16 / period
+		:null_edge (x15 / long)
+		:part-of (x19 / weak-41
+			:ARG1 (x18 / economy))))
+
+# ::id 46
+# ::snt The slump which started in 200.
+# ::tok The slump which started in 200 .
+(x2 / slump-01
+	:ARG0-of (x4 / start-01
+		:time 200))
+
+# ::id 47
+# ::snt outstrips even the Great Depression of the 1930s.
+# ::tok outstrips even the Great Depression of the 1930s .
+(x1 / outstrip-01
+	:null_edge (x4 / Great
+		:mod (x2 / even)
+		:time (xap0 / date-entity
+			:time (x8 / date-entity))))
+
+# ::id 48
+# ::snt Possible booster: The OECD's predictions do not take into account the effect of the London Olympics, which may help to boost the economy.
+# ::tok Possible booster : The OECD 's predictions do not take into account the effect of the London Olympics , which may help to boost the economy .
+(x2 / booster
+	:mod (x1 / possible)
+	:domain (x7 / predict-01
+		:ARG0 (x5 / organization
+			:name (n / name
+				:op1 "OECD"))
+		:ARG1 (x12 / account)
+		:ARG1 (x14 / effect-01
+			:ARG0 (x18 / game
+				:name (n1 / name
+					:op1 "Olympics")
+				:location (x17 / city
+					:name (n2 / name
+						:op1 "London"))
+				:ARG0-of (x22 / help-01
+					:mod (x21 / possible)
+					:ARG1 (x24 / boost-01
+						:ARG1 (x26 / economy)))))))
+
+# ::id 49
+# ::snt However initial signs have been that The OECD has not had the expected impac.
+# ::tok However initial signs have been that The OECD has not had the expected impac .
+(x3 / sign-01
+	:time (x2 / initial)
+	:ARG1 (x11 / have-03
+		:ARG0 (x8 / organization
+			:name (n / name
+				:op1 "OECD"))
+		:ARG1 (x14 / impac
+			:ARG1-of (x13 / expect-01))))
+
+# ::id 50
+# ::snt However, analysts sai.
+# ::tok However , analysts sai .
+(x4 / sai
+	:ARG0 (x3 / person
+		:ARG0-of (a / analyze-01)))
+
+# ::id 51
+# ::snt the OECD outlook for the UK was 'overly pessimistic' because the UK did no.
+# ::tok the OECD outlook for the UK was ` overly pessimistic ' because the UK did no .
+(x10 / pessimistic
+	:domain (x3 / outlook
+		:ARG0 (x2 / organization
+			:name (n / name
+				:op1 "OECD"))
+		:poss (x6 / country
+			:name (n1 / name
+				:op1 "UK")))
+	:mod (x9 / overly)
+	:ARG1-of (x12 / cause-01
+		:ARG0 (x15 / do-02
+			:ARG0 (x14 / country
+				:name (n2 / name
+					:op1 "UK"))
+			:polarity -)))
+
+# ::id 52
+# ::snt take account of any bounce back from the disruption caused by th.
+# ::tok take account of any bounce back from the disruption caused by th .
+(x1 / take-01
+	:ARG1 (x2 / account)
+	:ARG2 (x5 / bounce
+		:mod (x4 / any)
+		:direction (x6 / back)
+		:ARG2 (x9 / disruption
+			:ARG1-of (x10 / cause-01
+				:ARG0 (x12 / th)))))
+
+# ::id 53
+# ::snt Queen's Diamond Jubilee.
+# ::tok Queen 's Diamond Jubilee .
+(x4 / jubilee)
+
+# ::id 54
+# ::snt The International Monetary Fund ha.
+# ::tok The International Monetary Fund ha .
+(x5 / ha
+	:ARG0 (x4 / fund
+		:mod (x2 / international)
+		:mod (x3 / monetary)))
+
+# ::id 55
+# ::snt cut The International Monetary Fund 2012 forecast to 0.2 per cent growth while the Bank of Englan.
+# ::tok cut The International Monetary Fund 2012 forecast to 0.2 per cent growth while the Bank of Englan .
+(x1 / cut-02
+	:ARG1 (x4 / monetary
+		:mod (x3 / international))
+	:ARG1 (x12 / grow-01
+		:ARG1 (x7 / forecast-01
+			:time (x6 / date-entity
+				:year 2012))
+		:ARG1 (x11 / monetary-quantity
+			:unit (c / cent)))
+	:prep-under (x15 / government-organization
+		:name (n / name
+			:op1 "Bank"
+			:op2 "of"
+			:op3 "Englan")))
+
+# ::id 56
+# ::snt is expecting stagnation.
+# ::tok is expecting stagnation .
+(x2 / expect-01
+	:ARG1 (x3 / stagnation))
+
+# ::id 57
+# ::snt The OECD has been one of Mr Osborne's most influential supporters and has defended the Chancellor's austerity plans.
+# ::tok The OECD has been one of Mr Osborne 's most influential supporters and has defended the Chancellor 's austerity plans .
+(x13 / and
+	:op2 (x12 / person
+		:ARG0-of (s / support-01)
+		:ARG1 (x2 / organization
+			:name (n / name
+				:op1 "OECD"))
+		:ARG1 (x8 / person
+			:name (n1 / name
+				:op1 "Osborne"))
+		:ARG0-of (x11 / influence-01
+			:degree (x10 / most)))
+	:op2 (x15 / defend-01
+		:ARG1 (x20 / plan-01
+			:ARG0 (x17 / have-org-role-91
+				:ARG2 (c / chancellor))
+			:mod (x19 / austerity))))
+
+# ::id 58
+# ::snt Pier Carlo Padoan, of the OECD, sai.
+# ::tok Pier Carlo Padoan , of the OECD , sai .
+(x9 / sai
+	:ARG0 (x1 / person
+		:name (n / name
+			:op1 "Pier"
+			:op2 "Carlo"
+			:op3 "Padoan")
+		:poss (x7 / organization
+			:name (n1 / name
+				:op1 "OECD"))))
+
+# ::id 59
+# ::snt the slump was down to global factors, such as the eurozone, and adde.
+# ::tok the slump was down to global factors , such as the eurozone , and adde .
+(x2 / slump-01
+	:mod (x4 / down
+		:ARG1 (x7 / factor
+			:mod (x6 / globe)
+			:example (x14 / and
+				:op1 (x12 / eurozone)
+				:op2 (x15 / adde)))))
+
+# ::id 60
+# ::snt that the Chancellor's plan to tackle the deficit was 'appropriate'.
+# ::tok that the Chancellor 's plan to tackle the deficit was ` appropriate ' .
+(x12 / appropriate
+	:ARG1 (x5 / plan-01
+		:ARG0 (x3 / have-org-role-91
+			:ARG2 (c / chancellor))
+		:ARG1 (x7 / tackle-01
+			:ARG1 (x9 / deficit))))
+
+# ::id 61
+# ::snt Rachel Reeves, a Labour Treasur.
+# ::tok Rachel Reeves , a Labour Treasur .
+(x2 / country
+	:name (n / name
+		:op1 "Reeves")
+	:null_edge (x5 / name
+		:op1 "Labour"
+		:op2 "Treasur"))
+
+# ::id 62
+# ::snt spokesman, said: 'These very concerning forecasts show just how badl.
+# ::tok spokesman , said : ` These very concerning forecasts show just how badl .
+(x3 / say-01
+	:ARG1 (x10 / show-01
+		:ARG0 (x9 / forecast-01
+			:degree (x7 / very)
+			:ARG0-of (x8 / concern-02))
+		:ARG1 (x13 / badl
+			:mod (x11 / just)))
+	:ARG0 (xap0 / person
+		:ARG0-of (x1 / have-org-role-91
+			:ARG2 (s / spokesman))))
+
+# ::id 63
+# ::snt the Government's economic policies have failed.
+# ::tok the Government 's economic policies have failed .
+(x7 / fail-01
+	:ARG1 (x5 / policy
+		:poss (x2 / government-organization
+			:ARG0-of (g / govern-01))
+		:mod (x4 / economy)))
+
+# ::id 64
+# ::snt 'David Cameron and George Osborne need to stop clinging on to their failed economic plan and change course now.
+# ::tok ` David Cameron and George Osborne need to stop clinging on to their failed economic plan and change course now .
+(x7 / need-01
+	:ARG0 (x4 / and
+		:op1 (x2 / newspaper
+			:name (n / name
+				:op1 "David"
+				:op2 "Cameron"))
+		:op2 (x5 / name
+			:op1 "George"
+			:op2 "Osborne"))
+	:ARG1 (x17 / and
+		:op1 (x9 / stop-01
+			:ARG1 (x10 / cling
+				:ARG1 (x16 / plan-01
+					:ARG1-of (x14 / fail-01)
+					:mod (x15 / economy))))
+		:op2 (x18 / change-01
+			:ARG1 (x19 / course)
+			:time (x20 / now))))
+
+# ::id 65
+# ::snt 'Without a serious plan for jobs and growth we won't get the deficit down.
+# ::tok ` Without a serious plan for jobs and growth we wo n't get the deficit down .
+(x13 / get-01
+	:ARG1 (x5 / plan-01
+		:mod (x4 / serious)
+		:ARG3 (x8 / and
+			:op1 (x7 / job)
+			:op2 (x9 / grow-01)))
+	:ARG0 (x10 / we)
+	:ARG1 (x15 / deficit))
+
+# ::id 66
+# ::snt .
+# ::tok .
+(x / xconcept)
+
+# ::id 67
+# ::snt The Old Lady of Threadneedle Street: Despite the warnings, the Bank of England maintained interest rates at 0.5 per cent and held the Bank of England quantitative easing programme at 375billio.
+# ::tok The Old Lady of Threadneedle Street : Despite the warnings , the Bank of England maintained interest rates at 0.5 per cent and held the Bank of England quantitative easing programme at 375billio .
+(x23 / and
+	:op1 (x16 / maintain-01
+		:ARG1 (x3 / lady
+			:mod (x2 / old
+				:poss (x6 / street
+					:mod (x5 / threadneedle))))
+		:ARG2 (x10 / warn-01
+			:ARG0 (x13 / bank
+				:poss (x15 / country
+					:name (n / name
+						:op1 "England"))))
+		:ARG0 x13
+		:ARG1 (x18 / rate
+			:mod (x17 / interest)))
+	:op2 (x22 / monetary-quantity
+		:unit (c / cent)
+		:quant 0.5)
+	:op2 (x24 / hold-04
+		:ARG0 x3
+		:ARG0 x13
+		:ARG1 (x31 / programme
+			:null_edge (x26 / Bank
+				:null_edge (x28 / country
+					:name (n1 / name
+						:op1 "England")))
+			:mod (x29 / quantitative)
+			:mod (x30 / ease-02))))
+
