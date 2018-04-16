@@ -8,10 +8,10 @@ This repository was stored at my workstation at `/home/ritwik/ATS` and that is w
 
 Download the non-anonymized dataset of CNN/Daily mail from [here](https://cs.nyu.edu/~kcho/DMQA/), click on stories. Move the archive files to `/dataset` folder and extract there.
 
-`/test/t5.py` by default picks news articles from `/dataset/dailymail/stories`.
-Replace `dailymail`  with `cnn` if you wish to pick sentences from there. In that case don't forget to change the results path in `/jamr/writeRslts.py` from `/dataset/results` to `/dataset/results` (if you wish to keep the results from both datasets at different place, otherwise not problem) 
-
 Make a file named `files.txt` and store names of all the news articles present in `/dataset/cnn/stories`. Similarly make a file named `files2.txt` for `/dataset/dailymail/stories`. 
+
+`/test/t5.py` by default picks news articles from `/dataset/dailymail/stories` on the basis of `files2.txt`.
+Replace `dailymail`  with `cnn` and use `files.txt` if you wish to pick sentences from there. In that case don't forget to change the results path in `/jamr/writeRslts.py` from `/dataset/results` to `/dataset/results2` (if you wish to keep the results from both datasets at different place, otherwise no problem) 
 
 # Usage
 
