@@ -13,6 +13,8 @@ Make a file named `files.txt` and store names of all the news articles present i
 `/test/t5.py` by default picks news articles from `/dataset/dailymail/stories` on the basis of `files2.txt`.
 Replace `dailymail`  with `cnn` and use `files.txt` if you wish to pick sentences from there. In that case don't forget to change the results path in `/jamr/writeRslts.py` from `/dataset/results` to `/dataset/results2` (if you wish to keep the results from both datasets at different place, otherwise no problem) 
 
+Update: [pywsd](https://github.com/alvations/pywsd) is to be installed as well for WSD task. `NLTK` is also required for POS ordering but that will be installed while installing neuralcoref library. Just to be on safe side, install `NLTK` again.
+
 # Usage
 
 Once everything is installed, with the above directory structure and absolute paths resolved. Simply run
