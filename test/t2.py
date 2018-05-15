@@ -1,6 +1,8 @@
 import re 
 import sys
 import os
+import nltk
+from pywsd.lesk import simple_lesk
 
 def gettabs (str1):
 	ts = len(str1) - len(str1.lstrip('	'))
@@ -22,13 +24,17 @@ def getparent (content, j):
 			return [content[j-1][kk:],j-1]
 		j=j-1
 
-def getword (str1):
+def getInstance (str1):
 	k = str1.find(':')
 	if k==-1:
 		return str1[1:]
 	while str1[k] != ' ' and k!=len(str1)-2:
 		k+=1
 	return str1[k+1:]
+
+def getword (str1):
+	t = str1.rfind(' ')
+	return str1[t:].strip()
 
 
 def graphMerge(content, i, j, windx1, windx2): #bydefault FALL
@@ -76,12 +82,54 @@ def graphMerge(content, i, j, windx1, windx2): #bydefault FALL
 			# exit()
 		j+=1
 
-	# print ("Index of the below line containing given word "+str(i))
-	# print content[i] #below
-	# print ("Index of the above line containing given word "+str(j))
-	# print content[j] #above
-	#print (len(content[tj].split())-2)
+	#check if those words have common parent or sibling or children
+	tvar = gettabs(content[j])
+	mylist1 = []
+	tp1 = getparent(content,j)
+	# print getword(tp1[0])
+	mylist1.append(getword(getparent(content,j)[0])) #parent
+	tt1 = 1
+	while gettabs(content[j+tt1])==tvar+1: 
+		mylist1.append(getword(content[j+tt1])) #children
+		tt1+=1
+	tt1 = 1
+	while gettabs(content[tp1[1]+tt1]) == tvar:
+		if (tp1[1]+tt1 != j):
+			mylist1.append(getword(content[tp1[1]+tt1])) #sibling
+		tt1+=1
+	# print mylist1
 
+	tvar = gettabs(content[i])
+	mylist2 = []
+	tp1 = getparent(content,i)
+	# print getword(tp1[0])
+	mylist2.append(getword(getparent(content,i)[0])) #parent
+	tt1 = 1
+	while i+tt1 < len(content) and gettabs(content[i+tt1])==tvar+1: 
+		mylist2.append(getword(content[i+tt1])) #children
+		tt1+=1
+		if i+tt1 == len(content):
+			break
+	tt1 = 1
+	# print tp1[1]+tt1, len(content)
+	while tp1[1]+tt1 < len(content) and gettabs(content[tp1[1]+tt1]) == tvar:
+		if (tp1[1]+tt1 != i):
+			mylist2.append(getword(content[tp1[1]+tt1])) #sibling
+		tt1+=1
+		if tp1[1]+tt1 == len(content):
+			break
+	# print mylist2
+
+	if len(set(mylist1).intersection(mylist2)) == 0:
+		print "No similarity found for "+getword(content[j])
+		return ["empty"]
+
+	# print ("Index of the below line containing given word "+str(i))
+	# print content[ti] #below
+	# print ("Index of the above line containing given word "+str(j))
+	# print content[tj] #above
+	#print (len(content[tj].split())-2)
+	
 	#adding bias to the below tokens
 	#uncomment this (and line 98) to get RISE
 	# tj, ti = ti, tj
@@ -136,7 +184,7 @@ def graphMerge(content, i, j, windx1, windx2): #bydefault FALL
 				# print ("Child is == "+content[nnj])
 				flag = False
 				for x in nlist:
-					if getword(content[nnj]) in x or nnj == j:
+					if getInstance(content[nnj]) in x or nnj == j:
 						flag = True
 						break
 				if flag == False:
@@ -157,7 +205,7 @@ def graphMerge(content, i, j, windx1, windx2): #bydefault FALL
 	#actually adding offsprings of the J 
 	# print "@NJ ", nj, content[nj]
 	while nj < len(content) and "#" not in content[nj]:
-		wrd = getword(content[nj])
+		wrd = getInstance(content[nj])
 		# wrd = content[nj][content[nj].find(' '):] #extracting answer="x21 / word" from str="	:ARG1 (x21 / word"
 		flag = False
 		for x in nlist:
@@ -172,7 +220,7 @@ def graphMerge(content, i, j, windx1, windx2): #bydefault FALL
 			wrd2 = wrd2[0]
 			# wrd2 = wrd2t[wrd2t.find(' '):]
 			if wrd2n == j:
-				wrd2 = getword(content[i])  
+				wrd2 = getInstance(content[i])  
 			# print ("##"+wrd2)
 			# print "@parent ------", wrd2
 			for x in nlist:
@@ -284,9 +332,14 @@ def addIndex(nlist):
 def getCommonWord(str1, str2):
 	# str1 = "Some scoff at the notion that movies do anything more than entertain ."
 	# str2 = "Some are wrong ."
-	ml1 = str1.split()
-	ml2 = str2.split()
-
+	ml1 = str1.lower().split()
+	ml1 = ml1[2:]
+	ml1[0] = ml1[0][0].upper() + ml1[0][1:]
+	ml2 = str2.lower().split()
+	ml2 = ml2[2:]
+	ml2[0] = ml2[0][0].upper() + ml2[0][1:]
+	print ml1 
+	print ml2
 	ml3 = set(ml1).intersection(ml2)
 	# print ml3
 	file = open("stpwrds.txt", "r+")
@@ -294,7 +347,44 @@ def getCommonWord(str1, str2):
 	file.close()
 	ml4 = set(ml3).difference(stpwrds)
 	# print ml4
-	return ml4
+	ml4 = list(ml4)
+	print ml4
+	i=0
+	while i<len(ml4):
+		if simple_lesk(str1,ml4[i]) != simple_lesk(str2,ml4[i]):
+			del ml4[i]
+		i+=1
+
+	t2 = nltk.pos_tag(ml4)
+	ml = []
+	for x in t2:
+		if x[1][0] == 'V':
+			ml.append(x[0])
+	for x in t2:
+		if x[1][0] == 'N':
+			ml.append(x[0])
+	for x in t2:
+		if x[1][0] == 'P' and x[1][1]=='R':
+			ml.append(x[0])
+	for x in t2:
+		if x[1] == "CD":
+			ml.append(x[0])
+	for x in t2:
+		if x[1][0] == 'F':
+			ml.append(x[0])
+	for x in t2:
+		if x[0] not in ml:
+			ml.append(x[0])
+	# print t2
+	# print ml
+
+	print "After WSD and POS reordering:\n", ml
+	i=0
+	while i<len(ml):
+		ml[i]=ml[i].lower()
+		i+=1
+
+	return ml
 
 def getVar(str1):
 	k = str1.find(':')
@@ -396,7 +486,7 @@ while k<len(content):
 		cw = getCommonWord(content[i], mystr1)
 		# print content[i]
 		# print mystr1
-		print cw
+		# print cw
 		if len(cw) == 0:
 			j=i
 			i=0
@@ -413,7 +503,7 @@ while k<len(content):
 			# print windx2
 			# print i
 			# print j
-			#repeat for all common words
+			# repeat for all common words
 			while nlist[0] == "empty":
 				if len(ml)==0:
 					j=1
@@ -421,14 +511,14 @@ while k<len(content):
 					break
 				print ml[0]
 				if "::tok" in mystr1:
-					windx1 = mystr1.split().index(ml[0]) - 1
-				else:
-					windx1 = mystr1.split().index(ml[0]) + 1	
+					windx1 = mystr1.lower().split().index(ml[0]) - 1 
+				else: #LAST:- in mystr1, hence windx1 is above
+					windx1 = mystr1.lower().split().index(ml[0]) + 1
 					windx1 = windx1 + (len(content[j].split())-2 - len(mystr1.split()))
-				windx2 = content[i].split().index(ml[0]) - 1
+				windx2 = content[i].lower().split().index(ml[0]) - 1
 				nlist = graphMerge(content2, i, j, windx1, windx2)
 				if nlist[0]=="empty": #this common word not present
-					ml = ml[1:]			#take next common word
+					ml = ml[1:]		  #take next common word
 			if len(ml)==0:
 				k+=1
 				continue
@@ -475,5 +565,3 @@ for x in content:
 
 file2.close()
 file.close()
-
-
